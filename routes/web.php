@@ -13,9 +13,16 @@
 |
 */
 
-Route::get('/posts/{post}','App\Http\Controllers\PostController@show');
+// Route::get('/posts/{post}','App\Http\Controllers\PostController@show');
 
 
+Route::get('/', function(){
+  return view('welcome');
+});
+
+Route::get('/contact', function(){
+  return view('contact');
+});
 
 //  Route::get('/posts/{post}', function($post){
 //     $posts = [

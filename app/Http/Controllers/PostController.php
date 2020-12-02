@@ -4,20 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Post;
+use App\Models\Post;
 
 class PostController 
 {
 
     public function show($slug){
 
-        $post =  DB::table('posts')->where('slug', $slug)->first();
-
-        $post = Post::where('slug', $slug)-> first();
-        
-        if (! $post) {
-            abort(404);
-        }
+        $post = Post::where('slug', $slug)->first();
 
          return view('post', [
             'post' => $post
